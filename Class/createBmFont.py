@@ -9,6 +9,7 @@ import shutil
 import time
 import sys
 from xml.etree import ElementTree
+import ToolUtil
 
 reload(sys)
 sys.setdefaultencoding('utf8') 
@@ -37,12 +38,13 @@ chars count=@count
 nameList = [] 
 class createBmFont(object):
     """docstring for createBmFont"""
-    def __init__(self):
+    def __init__(self,msgObj):
         super(createBmFont, self).__init__()
         self._mPlitP = None
         self._mPngP = None
         self._mSaveP = None
         self._mSaveName = None
+        self._mMsgObj = msgObj
         
         
     def tree_to_dict(self,tree):
@@ -120,8 +122,11 @@ class createBmFont(object):
         f = open( os.path.join(self._mSaveP, str("%s.fnt" % self._mSaveName)) , "w")
         f.write(mSaveCfgContent)
         f.close()
-
-        shutil.copyfile(self._mPngP,  os.path.join(self._mSaveP, str("%s.png" % self._mSaveName)))
+        savePngPath = os.path.join(self._mSaveP, str("%s.png" % self._mSaveName))
+        if savePngPath != self._mPngP :
+            shutil.copyfile(self._mPngP,  savePngPath)
+        else:
+            print u"已经存在%s.png文件" % (self._mSaveName)
 
     def createFont(self,plitP,pngP,saveP):
         cfgContent = str(BMFONTCFG).lstrip()
@@ -130,7 +135,7 @@ class createBmFont(object):
         self._mPngP = pngP
         self._mSaveP = saveP
 
-        self._mSaveName = os.path.basename(pngP).split('.', 1)[0] 
+        self._mSaveName = ToolUtil.GetFileName(pngP) 
         print self._mSaveName
 
         mSaveCfgContent = None
@@ -138,6 +143,20 @@ class createBmFont(object):
             mSaveCfgContent = self.gen_png_from_plist(self._mPlitP,cfgContent)
         else:
             print u"【无可用生成字库的plist文件】"
+            try:
+                self._mMsgObj.ClientMsg("Fail",u"【无可用生成字库的plist文件】")
+            except Exception, e:
+                return 0
+            
 
         if mSaveCfgContent:
             self.SaveCfgFont(mSaveCfgContent)
+            try:
+                self._mMsgObj.ClientMsg("Success",u"【生成成功！！】")
+            except Exception, e:
+                return 0
+        else:
+            try:
+                self._mMsgObj.ClientMsg("Fail",u"【无法生成Font文件】")
+            except Exception, e:
+                return 0

@@ -30,8 +30,11 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     @QtCore.pyqtSlot()
     def _BtnEventCrtBmf(self):
-        print u"点中了"
-        w = CreateBmFWin()
-        self.setCentralWidget(w)
+        self.hide()
+        
+        w = CreateBmFWin(self)
+        w.show()
+
+        
 
 

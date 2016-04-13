@@ -7,9 +7,13 @@ Usage:
 
 from setuptools import setup
 
+
 APP = ['StartTool.py']
 DATA_FILES = []
-OPTIONS = {'argv_emulation': True}
+OPTIONS = {
+			'argv_emulation': True,
+			'iconfile':'StartTool.icns'
+		}
 
 setup(
     app=APP,

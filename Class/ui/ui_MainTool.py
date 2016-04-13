@@ -26,10 +26,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(800, 600)
+        MainWindow.setMinimumSize(QtCore.QSize(800, 600))
+        MainWindow.setMaximumSize(QtCore.QSize(800, 600))
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.btn_crtBmF = QtGui.QPushButton(self.centralwidget)
-        self.btn_crtBmF.setGeometry(QtCore.QRect(330, 60, 201, 61))
+        self.btn_crtBmF.setGeometry(QtCore.QRect(310, 50, 201, 61))
         self.btn_crtBmF.setStyleSheet(_fromUtf8("font: 24pt \"Helvetica\";"))
         self.btn_crtBmF.setObjectName(_fromUtf8("btn_crtBmF"))
         MainWindow.setCentralWidget(self.centralwidget)

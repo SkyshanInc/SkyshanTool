@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'UI/ui_createBmFont.ui'
 #
-# Created: Wed Apr 13 19:17:24 2016
-#      by: PyQt4 UI code generator 4.10.3
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -27,6 +26,8 @@ class Ui_CreateBmFont(object):
     def setupUi(self, CreateBmFont):
         CreateBmFont.setObjectName(_fromUtf8("CreateBmFont"))
         CreateBmFont.resize(800, 600)
+        CreateBmFont.setMinimumSize(QtCore.QSize(800, 600))
+        CreateBmFont.setMaximumSize(QtCore.QSize(800, 600))
         self.centralwidget = QtGui.QWidget(CreateBmFont)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.label_2 = QtGui.QLabel(self.centralwidget)
@@ -62,9 +63,12 @@ class Ui_CreateBmFont(object):
         self.txt_savePath = QtGui.QLineEdit(self.centralwidget)
         self.txt_savePath.setGeometry(QtCore.QRect(170, 160, 450, 30))
         self.txt_savePath.setObjectName(_fromUtf8("txt_savePath"))
+        self.btn_back = QtGui.QPushButton(self.centralwidget)
+        self.btn_back.setGeometry(QtCore.QRect(0, 0, 110, 32))
+        self.btn_back.setObjectName(_fromUtf8("btn_back"))
         CreateBmFont.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(CreateBmFont)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         CreateBmFont.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(CreateBmFont)
@@ -76,11 +80,12 @@ class Ui_CreateBmFont(object):
 
     def retranslateUi(self, CreateBmFont):
         CreateBmFont.setWindowTitle(_translate("CreateBmFont", "MainWindow", None))
-        self.label_2.setText(_translate("CreateBmFont", "png文件", None))
+        self.label_2.setText(_translate("CreateBmFont", "Png文件：", None))
         self.btn_selPlist.setText(_translate("CreateBmFont", "选择", None))
-        self.label_3.setText(_translate("CreateBmFont", "plist文件", None))
+        self.label_3.setText(_translate("CreateBmFont", "Plist文件：", None))
         self.btn_selPng.setText(_translate("CreateBmFont", "选择", None))
-        self.label_4.setText(_translate("CreateBmFont", "输出", None))
+        self.label_4.setText(_translate("CreateBmFont", "输出目录：", None))
         self.btn_selSavePath.setText(_translate("CreateBmFont", "选择", None))
         self.btn_export.setText(_translate("CreateBmFont", "导出", None))
+        self.btn_back.setText(_translate("CreateBmFont", "返回", None))
 

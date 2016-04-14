@@ -51,9 +51,9 @@ class CreateBmFWin(CBFSuper, Ui_CreateBmFont):
     def _BtnEventSelPlist(self):
         print u"选择plist文件"
         plistFile = QtGui.QFileDialog.getOpenFileName(self,"","(.plist)");
-        if ToolUtil.GetFileEndName(plistFile) != "plist" :
+        if plistFile == "" or ToolUtil.GetFileEndName(plistFile) != "plist" :
             QtGui.QMessageBox.about(self, "%s",u"请选择plist文件")
-            return 0
+            return 
 
         self.txt_plistPath.setText(plistFile)
         print(plistFile)
@@ -68,9 +68,9 @@ class CreateBmFWin(CBFSuper, Ui_CreateBmFont):
     def _BtnEventSelPng(self):
         print u"选择png文件"
         pngFile = QtGui.QFileDialog.getOpenFileName(self,"","(.png)");
-        if ToolUtil.GetFileEndName(pngFile) != "png" :
+        if pngFile == "" or ToolUtil.GetFileEndName(pngFile) != "png" :
             QtGui.QMessageBox.about(self, "%s",u"请选择png文件")
-            return 0
+            return 
 
         self.txt_pngPath.setText(pngFile)
         print(pngFile)

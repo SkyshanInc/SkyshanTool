@@ -29,8 +29,8 @@
    <widget class="QPushButton" name="btn_crtBmF">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>50</y>
+      <x>20</x>
+      <y>60</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -42,6 +42,88 @@
      <string>创建BmFont</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>101</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Helvetica&quot;;</string>
+    </property>
+    <property name="text">
+     <string>工程目录：</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_selProj">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>选择</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt_projPath">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>10</y>
+      <width>450</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_buildIde">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>60</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;Helvetica&quot;;</string>
+    </property>
+    <property name="text">
+     <string>编译IDE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_buildProj">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;Helvetica&quot;;</string>
+    </property>
+    <property name="text">
+     <string>编译工程</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>130</y>
+      <width>201</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="lay_otherCom"/>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -49,7 +131,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
